@@ -1,2 +1,2 @@
 #!/bin/bash
-head -1 | tail -1
+nl -s '.' | egrep '[13579]' | cut -f2 -d'.'
