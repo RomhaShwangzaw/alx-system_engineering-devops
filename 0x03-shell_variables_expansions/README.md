@@ -12,3 +12,4 @@
 11-binary_to_decimal script converts a number from base 2 to base 10.
 12-combinations script prints all possible combinations of two letters, except oo.
 13-print_float script prints a number with two decimal places, followed by a new line.
+100-decimal_to_hexadecimal script converts a number from base 10 to base 16.
