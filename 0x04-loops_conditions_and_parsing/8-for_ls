@@ -3,6 +3,5 @@
 # where only the part of the name after the first dash is displayed
 for i in *
 do
-	var=$(echo "$i" | cut -d '-' -f 2)
-	echo "$var"
+	echo "$i" | cut -d '-' -f 2
 done
