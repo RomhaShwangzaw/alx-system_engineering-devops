@@ -17,12 +17,6 @@
 #		- Displays "manage_my_process restarted"
 #	Displays "Usage: manage_my_process {start|stop|restart}" if any other argument or no argument is passed
 
-if [ $# -ne 1 ]
-then
-	echo "Usage: manage_my_process {start|stop|restart}"
-	exit 0
-fi
-
 if [ "$1" = 'start' ]
 then
 	./manage_my_process &
@@ -31,13 +25,13 @@ then
 elif [ "$1" = 'stop' ]
 then
 	pid=$(cat /var/run/my_process.id)
-	kill -9 "$pid"
+	kill -15 "$pid"
 	rm /var/run/my_process.id
 	echo "manage_my_process stopped"
 elif [ "$1" = 'restart' ]
 then
 	pid=$(cat /var/run/my_process.id)
-	kill -9 "$pid"
+	kill -15 "$pid"
 	rm /var/run/my_process.id
 	./manage_my_process &
 	echo $! > /var/run/my_process.id
