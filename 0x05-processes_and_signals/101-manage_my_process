@@ -20,7 +20,7 @@
 if [ "$1" = 'start' ]
 then
 	./manage_my_process &
-	echo $$ > /var/run/my_process.id
+	echo $! > /var/run/my_process.id
 	echo "manage_my_process started"
 elif [ "$1" = 'stop' ]
 then
@@ -32,7 +32,7 @@ then
 	kill "$(pgrep -f /manage_my_process)"
 	rm /var/run/my_process.id
 	./manage_my_process &
-	echo $$ > /var/run/my_process.id
+	echo $! > /var/run/my_process.id
 	echo "manage_my_process restarted"
 else
 	echo "Usage: manage_my_process {start|stop|restart}"
