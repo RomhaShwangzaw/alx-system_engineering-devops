@@ -5,6 +5,7 @@
 #++    at the root with a curl GET request.
 
 apt-get update
-apt-get install -y nginx
-echo 'Hello World!' > /var/www/html/index.nginx-debian.html
-service nginx restart
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+service nginx start
