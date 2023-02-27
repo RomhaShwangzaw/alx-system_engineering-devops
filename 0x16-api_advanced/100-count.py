@@ -50,10 +50,10 @@ def count_words(subreddit, word_list, instances={}, after="", count=0):
         for word in word_list:
             if word.lower() in title:
                 times = len([t for t in title if t == word.lower()])
-                if instances.get(word) is None:
-                    instances[word] = times
+                if instances.get(word.lower()) is None:
+                    instances[word.lower()] = times
                 else:
-                    instances[word] += times
+                    instances[word.lower()] += times
 
     if after is None:
         if len(instances) == 0:
